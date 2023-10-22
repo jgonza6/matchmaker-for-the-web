@@ -1,7 +1,11 @@
 consoloe.log("Starting Matchmaker for the Web");
 
 function CalculateCompatibility() {
-  console.log("CalculateCompatibility()")'
+  console.log("CalculateCompatibility()")
+
+const FINAL_COMMENT_GREAT = "Soul Mates?"
+const FINAL_COMMENT_GOOD = "Maybe just friends"
+const FINAL_COMMENT = "No, thanks"
 
   const DESIRED_RESPONSE = {
     5, /* Strongly Agree */
@@ -63,6 +67,17 @@ function CalculateCompatibility() {
     TotalCompatibility = Math.round(TotalCompatibility);
     console.log("tc"+ TotalCompatibility);
 
+    document.getElementById("Compatibility").innerHTML = Your compatibility is: " + TotalCompatibility;
+    console.log("TotalCompatibility="+TotalCompatibility);
 
-    document.getElementByID("Compatibility").innerHTML = Your compatibility is: " + TotalCompatibility;
+    if (TotalCompatiblity <60) {
+      console.log(FINAL_COMMENT);
+      document.getElementById("Message").innerHTML = FINAL_COMMENT + TotalCompatibility;
+    } else if (Total Compatibility <80) {
+      console.log(FINAL_COMMENT_GOOD);
+      document.getElementById("Message").innerHTML = FINAL_COMMENT_GOOD + TotalCompatibility;
+    } else {
+        console.log(FINAL_COMMENT_GREAT);
+        document.getElementById("Message").innerHTML = FINAL_COMMENT_GREAT + TotalCompatibility;
+    }
 }
